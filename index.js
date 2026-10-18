@@ -6,20 +6,18 @@ const inputBtn = document.getElementById("input-btn");
 
 const ulEl = document.getElementById("ul-el");
 
+localStorage.clear();
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
 inputBtn.addEventListener('click', function () {
     myLeads.push(inputEl.value);
-    renderLeads();
+    
     inputEl.value = "";
+    localStorage.setItem("myLeads", )
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+    renderLeads()
 })
 
-// function renderLead () {
-//     let listItem = "<li> <a href=' # ' target='_blank'>" + inputEl.value + "</a></li>";
-
-
-
-//     ulEl.innerHTML += listItem;
-// }
 
 function renderLeads () {
     let listItems = "";
